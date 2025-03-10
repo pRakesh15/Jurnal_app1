@@ -20,15 +20,14 @@ public class UserRepoImpl {
     public List<UserEntity> getUserForSA(){
         Query query=new Query();
 //        query.addCriteria(Criteria.where("userName").is("rinku"));
-        //here is the beauty of orm is we are not directly use the collection
-        //we just add the class and the orm autometically map the code to the db..
+
 
         query.addCriteria(Criteria.where("email").exists(true));
         query.addCriteria(Criteria.where("email").ne(null).ne(""));
         query.addCriteria(Criteria.where("sentimentAnalysis").is(true));
-        List<UserEntity> userEntities = mongoTemplate.find(query, UserEntity.class);
-
-        return userEntities;
+        //here is the beauty of orm is we are not directly use the collection
+        //we just add the class and the orm autometically map the code to the db..
+        return mongoTemplate.find(query, UserEntity.class);
 
     }
 }
