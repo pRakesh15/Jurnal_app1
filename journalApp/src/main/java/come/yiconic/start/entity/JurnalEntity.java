@@ -1,6 +1,7 @@
 package come.yiconic.start.entity;
 
 
+import come.yiconic.start.enums.Sentiment;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -44,6 +45,7 @@ public class JurnalEntity {
 
     private LocalDateTime date;
 
+    private Sentiment sentiment;
 
 
 
