@@ -23,7 +23,7 @@ public class UserRepoImpl {
 
 
         query.addCriteria(Criteria.where("email").exists(true));
-        query.addCriteria(Criteria.where("email").ne(null).ne(""));
+//        query.addCriteria(Criteria.where("email").ne(null).ne(""));
         query.addCriteria(Criteria.where("sentimentAnalysis").is(true));
         //here is the beauty of orm is we are not directly use the collection
         //we just add the class and the orm autometically map the code to the db..
